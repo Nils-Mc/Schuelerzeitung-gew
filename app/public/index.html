@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schülerzeitung GEW</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Allgemeine Stile */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #A8A8A8;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 10px;
+            z-index: 10;
+        }
+
+        .navbar span {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        /* Login-Button */
+        .login-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            background: linear-gradient(135deg, #007BFF, #0056b3);
+            color: white;
+            border: none;
+            width: 130px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 80px;
+            right: 10px;
+        }
+
+        .login-button:hover {
+            background: linear-gradient(135deg, #0056b3, #007BFF);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Inhalt Container */
+        .container {
+            margin-top: 100px; /* Abstand für die Navbar */
+            width: 100%;
+            padding: 20px;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* PDF List Styles */
+        #pdf-list {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #pdf-list li {
+            list-style: none;
+            width: 220px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            background: white;
+            border: none;
+            font-size: 64px;
+            cursor: pointer;
+            color: #33BFD1;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f4f4f4;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            background: #e0e0e0;
+        }
+
+        span {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Mobile Anpassungen */
+        @media (max-width: 768px) {
+            .navbar {
+                height: 60px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .navbar span {
+                font-size: 20px;
+            }
+
+            .navbar img {
+                width: 45px;
+                height: 45px;
+                margin-right: 10px;
+            }
+
+            .login-button {
+                font-size: 12px;
+                padding: 5px 10px;
+                top: 80px;
+                right: 20px;
+            }
+
+            .container {
+                padding: 10px;
+                width: 100%;
+            }
+
+            #pdf-list li {
+                width: 50%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            button {
+                font-size: 48px;
+            }
+        }
+
+        /* Desktop Anpassungen */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 20px;
+                width: 80%;
+            }
+
+            button {
+                font-size: 80px;
+            }
+
+            #pdf-list li {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Graue Navigationsleiste -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="https://schuelerzeitung-gew.glitch.me/logo.jpg" alt="Logo">
+            <span>Ausgaben</span>
+        </div>
+    </div>
+
+    <!-- Admin Login Button -->
+    <button class="login-button" onclick="window.location.href='https://schuelerzeitung-gew.glitch.me/login.html'">
+        Admin Login
+    </button>
+
+    <!-- Container für die Liste der PDFs -->
+    <div class="container">
+        <main>
+            <ul id="pdf-list"></ul>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
